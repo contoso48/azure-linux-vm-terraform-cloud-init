@@ -1,1 +1,1 @@
-# azure-linux-vm-terraform-cloud-init
+# azure-linux-vm-vnet-terraform-cloud-init
