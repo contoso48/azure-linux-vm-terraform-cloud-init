@@ -1,0 +1,21 @@
+#cloud-boothook
+#!/bin/sh
+
+# Add proxies to Apt config
+cat > /etc/apt/apt.conf.d/00-proxy <<EOC
+Acquire::http { Proxy "https://10.6.15.132:8080"; };
+Acquire::https { Proxy "https://10.6.15.132:8080"; };
+Acquire::http::Pipeline-Depth "23";
+Acquire::Languages "none";
+EOC
+
+# Add it to the environment
+cat >> /etc/environment <<EOC
+http_proxy="https://10.6.15.132:8080"
+https_proxy="https://10.6.15.132:8080"
+no_proxy="localhost,127.0.0.1,168.63.129.16,.corpgroup.net,.azure.cloud.corp"
+HTTP_PROXY="https://10.6.15.132:8080"
+HTTPS_PROXY="https://10.6.15.132:8080"
+NO_PROXY="localhost,127.0.0.1,168.63.129.16,.corpgroup.net,.azure.cloud.corp"
+EOC
+
