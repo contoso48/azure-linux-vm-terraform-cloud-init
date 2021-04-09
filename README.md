@@ -21,3 +21,9 @@ Not included:
 
 Test- or Validation-Level: Basic
 - Further testing in hardened network environment with forced tunnelling and proxy needed
+
+ACTIONS:
+- Edit existingvnet.tf with your VNET name, RG, and Subnet-Name
+- Edit cloud-init.txt with your real Proxy IP address and settings
+- Edit cloud-init.txt apt section if you want packages from another source
+- Edit variables.tf to change the prefix name of the VM
