@@ -10,8 +10,6 @@ write_files:
       NO_PROXY="localhost,127.0.0.1,168.63.129.16,.corpgroup.net,.azure.cloud.corp"
     append: true
 
-package_upgrade: true
-
 apt:
   preserve_sources_list: true
   sources:
@@ -85,6 +83,8 @@ apt:
     - uri: http://security.ubuntu.com/ubuntu
   http_proxy: http://10.1.156.132:8080/
   https_proxy: https://10.1.156.132:8080/
+
+package_upgrade: true
 
 packages:
     - docker.io
