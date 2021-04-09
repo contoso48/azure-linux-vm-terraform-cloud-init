@@ -1,4 +1,15 @@
 #cloud-config
+write_files:
+  - path: /etc/environment
+    content: |
+      http_proxy="https://10.6.156.132:8080"
+      https_proxy="https://10.6.156.132:8080"
+      no_proxy="localhost,127.0.0.1,168.63.129.16,.corpgroup.net,.azure.cloud.corp"
+      HTTP_PROXY="http://10.6.156.132:8080"
+      HTTPS_PROXY="https://10.6.156.132:8080"
+      NO_PROXY="localhost,127.0.0.1,168.63.129.16,.corpgroup.net,.azure.cloud.corp"
+    append: true
+
 package_upgrade: true
 
 apt:
@@ -87,3 +98,4 @@ system_info:
 runcmd:
   - mkdir /test
   - echo "hello-test" >> /test/test.txt
+
