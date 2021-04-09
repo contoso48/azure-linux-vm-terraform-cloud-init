@@ -95,8 +95,15 @@ system_info:
   default_user:
     groups: [docker]
 
+# Docker Daemon needs proxy support - experimental if this write_files works after installing Docker
+write_files:
+  - path: /etc/sysconfig/docker
+    content: |
+      HTTP_PROXY="http://10.6.156.132:8080"
+      HTTPS_PROXY="https://10.6.156.132:8080"
+      NO_PROXY="localhost,127.0.0.1,168.63.129.16,.corpgroup.net,.azure.cloud.corp"
+    append: true
+
 runcmd:
   - mkdir /test
   - echo "hello-test" >> /test/test.txt
-
-
