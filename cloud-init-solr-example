@@ -1,0 +1,33 @@
+#cloud-config
+
+package_upgrade: true
+
+packages:
+  - apt-transport-https
+  - ca-certificates
+  - curl
+  - gnupg-agent
+  - software-properties-common
+  - default-jdk
+
+groups:
+  - solr
+
+runcmd:
+  - mkdir /test
+  - echo "hello-test" >> /test/test.txt
+  - apt-get update -y
+  - wget https://downloads.apache.org/lucene/solr/8.8.2/solr-8.8.2.tgz
+  - tar zxf solr-8.8.2.tgz
+  - chmod +x solr-8.8.2/bin/install_solr_service.sh
+  - bash solr-8.8.2/bin/install_solr_service.sh solr-8.8.2.tgz
+  - service solr status > /test/solrstatus.txt
+
+
+# Add default auto created user to docker group
+system_info:
+  default_user:
+    groups: [solr]
+
+# https://solr.apache.org/guide/8_8/taking-solr-to-production.html#taking-solr-to-production
+# ToDo:  Add PGP Key verification for download 
