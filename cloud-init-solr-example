@@ -30,4 +30,4 @@ system_info:
     groups: [solr]
 
 # https://solr.apache.org/guide/8_8/taking-solr-to-production.html#taking-solr-to-production
-# ToDo:  Add PGP Key verification for download 
+# ToDo:  Add PGP Key verification for download and any corporate proxy settings in apt and /etc/environment as needed (see other examples)
