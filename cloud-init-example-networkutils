@@ -2,7 +2,7 @@
 package_upgrade: true
 packages:
   - apt-transport-https
-  - sockper
+  - sockperf
   - curl
   - iperf3
   - traceroute
