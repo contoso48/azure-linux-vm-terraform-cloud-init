@@ -1,0 +1,8 @@
+#cloud-config
+package_upgrade: true
+packages:
+  - apt-transport-https
+  - sockper
+  - curl
+  - iperf3
+  - traceroute
