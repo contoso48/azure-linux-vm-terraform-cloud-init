@@ -27,3 +27,7 @@ ACTIONS:
 - Edit cloud-init.txt with your real Proxy IP address and settings
 - Edit cloud-init.txt apt section if you want packages from another source
 - Edit variables.tf to change the prefix name of the VM
+
+REFERNCE
+https://learn.microsoft.com/en-us/azure/virtual-machines/linux/using-cloud-init
+
