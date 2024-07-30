@@ -6,3 +6,4 @@ packages:
   - curl
   - iperf3
   - traceroute
+  - net-tools
